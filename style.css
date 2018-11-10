@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #606c88, #3f4c6b);
+  font-family: 'Slabo 27px', serif;
+}
+
+.container {
+  margin: 30px 0;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 4px;
+}
+
+.dot {
+  fill: #586481;
+  stroke: #fff;
+}
+
+.chart {
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+}
+
+.axisWhite line {
+  stroke: #fff;
+}
+
+.axisWhite path {
+  stroke: #fff;
+}
+
+.axisWhite text {
+  font-family: 'Slabo 27px', serif;
+  fill: #fff;
+  font-size: 12px;
+}
+
+.country-select {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+}
+
+select {
+  font-family: 'Slabo 27px', serif;
+  font-size: 16px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background: #fff;
+  border: 3px solid #fff;
+  font-weight: 300;
+  line-height: 50px;
+  color: #333;
+  box-shadow: none;
+  transition: all .3s;
+  border-left: 1px solid #888;
+  width: 30%;
+}
