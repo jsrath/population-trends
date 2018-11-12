@@ -11,6 +11,18 @@ body {
   height: 100%;
 }
 
+.loading {
+  margin-top: 100px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.displayed {
+  display: flex;
+}
+
 .line {
   fill: none;
   stroke: #fff;

@@ -12,6 +12,8 @@ function getCountries() {
 }
 
 async function getData(event) {
+  d3.select('.chart').html('');
+  document.querySelector('.loading').classList.add('displayed');
   let country;
   event.target.value ? (country = event.target.value) : (country = countrySelect.selectedOptions[0].innerText);
   for (let i = year; i < 2018; i++) {
@@ -32,7 +34,6 @@ async function getData(event) {
 }
 
 function drawGraph(clientWidth) {
-  d3.select('.chart').html('');
   const margin = { top: 20, right: 20, bottom: 30, left: 50 };
   const width = clientWidth - margin.left - margin.right;
   const height = 500 - margin.top - margin.bottom;
@@ -93,6 +94,7 @@ function drawGraph(clientWidth) {
         .tickFormat(d3.format('.3s')),
     );
   data = [];
+  document.querySelector('.loading').classList.remove('displayed');
 }
 
 document.querySelector('#country-select').addEventListener('change', getData);
