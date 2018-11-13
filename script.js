@@ -46,6 +46,11 @@ function drawGraph(clientWidth) {
     .x(d => x(d.year))
     .y(d => y(d.population));
 
+  const tooltip = d3
+    .select('body')
+    .append('div')
+    .attr('class', 'tooltip');
+
   const svg = d3
     .select('.chart')
     .append('svg')
@@ -74,9 +79,17 @@ function drawGraph(clientWidth) {
     .enter()
     .append('circle')
     .attr('class', 'dot')
-    .attr('cx', (d, i) => x(d.year))
-    .attr('cy', (d, i) => y(d.population))
-    .attr('r', 5);
+    .attr('cx', d => x(d.year))
+    .attr('cy', d => y(d.population))
+    .attr('r', 5)
+    .on('mouseover', d =>
+      tooltip.style('display', 'block').html(
+        `<p><strong>${d.year.getFullYear()}</strong></p>
+      <p>${d.population.toLocaleString()}</p>`,
+      ),
+    )
+    .on('mousemove', () => tooltip.style('top', `${d3.event.pageY + 10}px`).style('left', `${d3.event.pageX + 20}px`))
+    .on('mouseout', () => tooltip.style('display', 'none'));
 
   svg
     .append('g')
