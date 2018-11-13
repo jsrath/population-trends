@@ -40,6 +40,8 @@ function drawGraph(clientWidth) {
   const parseTime = d3.timeParse('%Y');
   const x = d3.scaleTime().range([0, width]);
   const y = d3.scaleLinear().range([height, 0]);
+  const formatNumber = d3.format('.3s');
+  const formatBillion = number => formatNumber(number).replace(/G/, 'B');
 
   const valueline = d3
     .line()
@@ -104,7 +106,7 @@ function drawGraph(clientWidth) {
       d3
         .axisLeft(y)
         .ticks(10)
-        .tickFormat(d3.format('.3s')),
+        .tickFormat(formatBillion),
     );
   data = [];
   document.querySelector('.loading').classList.remove('displayed');
