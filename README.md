@@ -14,7 +14,7 @@
 <h4 align="center">See population trends for any country in the world.</h4>
 <h3 align="center"><a href="http://projects.jsrath.com/population-trends">LIVE SITE</a></h3>
 
-Population trends is a D3.js and vanilla JavaScript web app that calls a population API and displays population figures for every country since 1980.  
+Population Trends is a D3.js and vanilla JavaScript web app that calls a population API and displays population figures for every country since 1980.  
 
 ## Installation
 
