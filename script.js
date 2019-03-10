@@ -18,7 +18,7 @@ async function getData(event) {
   event.target.value ? (country = event.target.value) : (country = countrySelect.selectedOptions[0].innerText);
   for (let i = year; i < 2018; i++) {
     let obj = {};
-    await fetch(`http://api.population.io/1.0/population/${year}/${country}`)
+    await fetch(`https://api.population.io/1.0/population/${year}/${country}`)
       .then(result => result.json())
       .then(result => result.map(age => age.total).reduce((a, b) => a + b))
       .then(result => {
